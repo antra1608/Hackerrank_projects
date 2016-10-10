@@ -1,0 +1,39 @@
+// C Code
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    long int n,m;
+    scanf("%ld",&n);
+    scanf("%ld",&m);
+    long int *a=(long int *)malloc(sizeof(long int)*(n+1));
+    for(int i=1;i<=n;i++)
+        a[i]=0;
+    for(int i=0;i<m;i++)
+        {
+        long int p,q;
+        long int val;
+        scanf("%ld",&p);
+        scanf("%ld",&q);
+        scanf("%ld",&val);
+        a[p]+=val;
+        a[q+1]-=val;
+    
+    }
+    long int max=0;
+    long int x=0;
+    for(int i=1;i<=n;i++)
+    {
+        x=x+a[i];
+        if(x>max)
+            max=x;
+    }
+    printf("%ld",max);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
